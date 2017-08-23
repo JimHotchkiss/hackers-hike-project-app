@@ -6,12 +6,16 @@
     <title>Sinatra Hikers App</title>
   </head>
   <body>
+    <div>
+      <a href="/signup">Signup</a>
+      <a href="/login">Login</a>
+    </div>
+
     <h1>Hikers Index Page</h1>
     <%@hikes.each do |hike|%>
     <ul>
       <li><%=hike.name%></li>
     </ul>
     <%end%>
-    <p>This is where I'd like there to be an icon for the user to click on to enter the app</p>
   </body>
 </html>

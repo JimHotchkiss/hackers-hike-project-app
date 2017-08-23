@@ -1,8 +1,9 @@
 class HikesController < ApplicationController
 
-  get '/' do #test textt
-    @hikes = Hike.all
-    erb :index
-  end
+  
+
+  get '/users/signup' do 
+    erb :signup
+  end 
 
 end

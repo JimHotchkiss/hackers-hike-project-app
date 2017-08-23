@@ -7,5 +7,5 @@ class ApplicationController < Sinatra::Base
 		set :session_secret, "security_password"
 	end
 
-  
+
 end

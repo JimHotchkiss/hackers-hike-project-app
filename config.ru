@@ -8,5 +8,6 @@ set :public_folder, Proc.new { File.join(root, "public") }
 
 use Rack::MethodOverride
 
+use UsersController
 use HikesController
 run ApplicationController

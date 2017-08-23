@@ -19,8 +19,9 @@ class UsersController < ApplicationController
       redirect '/signup'
     else
       @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-      binding.pry
-      redirect '/hikes'
+      session[:user_id] = params[:id]
+      @hikes = Hike.all
+      erb :hikes
     end
   end
 

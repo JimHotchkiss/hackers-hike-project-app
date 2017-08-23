@@ -40,4 +40,6 @@
 ~ On hikes.erb, I'm going to have a logout button
 ~ Okay, I've got the sigup form, and I've got the params reaching the post '/signup'
 ~ I need to think about hikes_controller, and if I want a get '/hikes' controller action in the users_controller.
-~ I need to make a conditional, w/in my post /signup to check for blank content 
+~ I need to make a conditional, w/in my post /signup to check for blank content
+~ Okay, I need to think about where I want to the user to go after they have signed up.  Oh!  I need to set they sessions hash
+~ Okay, I need to create a login page and form 

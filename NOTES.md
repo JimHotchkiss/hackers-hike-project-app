@@ -42,4 +42,6 @@
 ~ I need to think about hikes_controller, and if I want a get '/hikes' controller action in the users_controller.
 ~ I need to make a conditional, w/in my post /signup to check for blank content
 ~ Okay, I need to think about where I want to the user to go after they have signed up.  Oh!  I need to set they sessions hash
-~ Okay, I need to create a login page and form 
+~ Okay, I need to create a login page and form
+~ I'm going to check for params at post '/login', then I have to look into authentication of password
+~ I may want to divide up my views folder into sub-folder, namely, users and hikes.  Review material: 'Login lab'.   

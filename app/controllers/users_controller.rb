@@ -25,6 +25,19 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/login' do
+    if logged_in?
+      erb :hikes
+    else 
+      erb :login
+    end 
+  end
+
+  post '/login' do 
+    @user = User.find_by(username: params[:username])
+    binding.pry
+  end 
+
 
 
   helpers do

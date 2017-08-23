@@ -44,4 +44,9 @@
 ~ Okay, I need to think about where I want to the user to go after they have signed up.  Oh!  I need to set they sessions hash
 ~ Okay, I need to create a login page and form
 ~ I'm going to check for params at post '/login', then I have to look into authentication of password
-~ I may want to divide up my views folder into sub-folder, namely, users and hikes.  Review material: 'Login lab'.   
+~ I may want to divide up my views folder into sub-folder, namely, users and hikes.  Review material: 'Login lab'.  
+~ So I've authenticated the password by adding bcrypt and has_secure_password to the User model.  
+~ So far, I've handled signup and login.
+~ I want to do a logout, including a button on the hikes pages.
+    * Test out signup and login, make sure password is secure
+~ Deleted users_controllers.rb

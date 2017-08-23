@@ -28,15 +28,22 @@ class UsersController < ApplicationController
   get '/login' do
     if logged_in?
       erb :hikes
-    else 
+    else
       erb :login
-    end 
+    end
   end
 
-  post '/login' do 
+  post '/login' do
+
     @user = User.find_by(username: params[:username])
-    binding.pry
-  end 
+    if @user && @user.authenticate(params[:password])
+      binding.pry
+      session[:user_id] = params[:id]
+      erb :hikes
+    else
+      redirect '/login'
+    end
+  end
 
 
 

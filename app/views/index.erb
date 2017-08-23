@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Sinatra Hikers App</title>
+  </head>
+  <body>
+    <div>
+      <a href="/signup">Signup</a>
+      <a href="/login">Login</a>
+    </div>
+
+    <h1>Hikers Index Page</h1>
+    <%@hikes.each do |hike|%>
+    <ul>
+      <li><%=hike.name%></li>
+    </ul>
+    <%end%>
+  </body>
+</html>

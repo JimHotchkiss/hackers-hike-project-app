@@ -28,3 +28,5 @@
 ~ I'll add relationships to models after migrations
 ~ I will seed the db, and test relationships.  
 ~ Going to try and push a delete
+~ Okay, so it's 12:30 on Wednesday, and I've finally got the app back to where it was yesterday afternoon.  
+~ Okay, work on signup/login

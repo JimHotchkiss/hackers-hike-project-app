@@ -7,24 +7,24 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    @hikes = Hike.all
     if logged_in?
       erb :'hikes' # this should maybe be on the hiker_controller?
-    else 
+    else
       erb :signup
-    end 
+    end
   end
 
   post '/signup' do
-    binding.pry
-    if logged_in?
-      erb :hikes
-    else 
-    @user = User.create(username: params[:username], email: [:email], password: [:password])
-    redirect '/hikes'
-  end 
-
+    if params[:username] == "" || params[:email] == "" || params[:password] == ""
+      redirect '/signup'
+    else
+      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+      binding.pry
+      redirect '/hikes'
+    end
   end
+
+
 
   helpers do
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
     def current_user
       User.find(session[:user_id])
-    end 
+    end
 
   end
 

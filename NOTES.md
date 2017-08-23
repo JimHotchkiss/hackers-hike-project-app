@@ -38,3 +38,6 @@
   * Nope! get '/signup', but before the page is rendered.  
 ~ Okay, so I have a conditional in get '/signup', and I've made a hikes.erb, a page they will be directed to if they are logged in
 ~ On hikes.erb, I'm going to have a logout button
+~ Okay, I've got the sigup form, and I've got the params reaching the post '/signup'
+~ I need to think about hikes_controller, and if I want a get '/hikes' controller action in the users_controller.
+~ I need to make a conditional, w/in my post /signup to check for blank content 

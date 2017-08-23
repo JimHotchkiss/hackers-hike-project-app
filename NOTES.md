@@ -50,3 +50,8 @@
 ~ I want to do a logout, including a button on the hikes pages.
     * Test out signup and login, make sure password is secure
 ~ Deleted users_controllers.rb
+~ Okay, so I restructured the views file to include both hikes and users
+~ In hikes I added hikes.erb and in users I included index, signup and login
+~ I also built a get '/hikes' action that lead to hikes.erb
+~ I want to add a logout button on the hikes.erb
+~ Added get '/logout' action.  

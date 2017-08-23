@@ -30,3 +30,11 @@
 ~ Going to try and push a delete
 ~ Okay, so it's 12:30 on Wednesday, and I've finally got the app back to where it was yesterday afternoon.  
 ~ Okay, work on signup/login
+~ Added a users controller and a signup.erb page.
+~ I also added both the get '/signup' and a post '/signup', both are behaving appropriately.
+~ I'm now going to build two helper methods, logged_in and current_user.
+  * Need to review sessions again.  
+~ I'm going to add the helper method, logged_in?, at the index page? (give it a try)  
+  * Nope! get '/signup', but before the page is rendered.  
+~ Okay, so I have a conditional in get '/signup', and I've made a hikes.erb, a page they will be directed to if they are logged in
+~ On hikes.erb, I'm going to have a logout button

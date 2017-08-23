@@ -1,35 +1,38 @@
 class UsersController < ApplicationController
 
-  get '/' do #test textt
+  get '/' do
     @hikes = Hike.all
-  # create login and sigup link.
-    erb :index
+    erb :'/users/index'
+  end
+
+  get '/hikes' do
+      @hikes = Hike.all
+      erb :'/hikes/hikes'
   end
 
   get '/signup' do
     if logged_in?
-      erb :'hikes' # this should maybe be on the hiker_controller?
+      erb :'/hikes/hikes'
     else
-      erb :signup
+      erb :'/users/signup'
     end
   end
 
   post '/signup' do
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      redirect '/signup'
+      redirect '/users/signup'
     else
       @user = User.create(username: params[:username], email: params[:email], password: params[:password])
       session[:user_id] = params[:id]
-      @hikes = Hike.all
-      erb :hikes
+      redirect '/hikes'
     end
   end
 
   get '/login' do
     if logged_in?
-      erb :hikes
+      redirect '/hikes'
     else
-      erb :login
+      erb :'/users/login'
     end
   end
 
@@ -38,8 +41,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = params[:id]
-      @hikes = Hike.all
-      erb :hikes
+      redirect '/hikes'
     else
       redirect '/login'
     end

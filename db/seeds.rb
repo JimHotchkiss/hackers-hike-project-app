@@ -8,15 +8,10 @@ user_info.each do |username, email, password|
   User.create(username: username, email: email, password: password)
 end
 
-category_info = [ #name
-  ['Thick Forest'],
-  ['Open Coastal'],
-  ['Urban Cityscape']
-]
+Category.create(name: "Thick Woods")
+Category.create(name: "Coastal Trail")
+Category.create(name: "Cityscape")
 
-category_info.each do |category|
-  Category.create(name: category)
-end
 
 hike_info = [ #name, locaiton, descitpion, user_id, category_id
   ['Dipey Trail', 'Stinson Beach, CA', 'Many different vistas', '3', '2'],

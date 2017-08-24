@@ -50,8 +50,10 @@
         <input type="text" name="location"></br>
 
         <label>Description:</label>
+        <input type="text" name="description"></br>
+
         <%Category.all.each do |category|%>
-        <input type="checkbox"><%=category.name%>
+        <input type="checkbox" name="category_id" value="<%=category.id%>"><%=category.name%>
         <%end%>
 
         <input type="submit">

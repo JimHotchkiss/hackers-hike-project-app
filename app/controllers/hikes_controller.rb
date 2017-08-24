@@ -6,17 +6,28 @@ class HikesController < ApplicationController
     erb :hikes
   end
 
-  get '/hikes/new' do  
-    if logged_in? 
+  get '/hikes/new' do
+    if logged_in?
       erb :'/hikes/new'
-    else 
+    else
       erb :'/users/login'
     end
-  end 
+  end
+
+  post '/hikes/new' do
+    if params[:name] == "" || params[:location] == "" || params[:description] == ""
+      redirect '/hikes/new'
+    else
+      @hike = Hike.create(name: params[:name], location: params[:location], description: params[:description])
+      @hikes = Hike.all
+      binding.pry
+      erb :'hikes/show_hike'
+    end
+  end
 
   get '/hikes/:id' do
     if logged_in?
-      @hike = Hike.find_by(params[:id])
+      @hike = Hike.find(params[:id])
       erb :'hikes/show_hike'
     else
       erb :'/users/login'

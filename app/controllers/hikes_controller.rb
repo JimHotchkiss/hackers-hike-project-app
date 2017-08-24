@@ -6,12 +6,11 @@ class HikesController < ApplicationController
     erb :hikes
   end
 
-  get '/hikes/new' do 
-    binding.pry # okay made it here! 
+  get '/hikes/new' do  
     if logged_in? 
-      erb :'/users/login'
+      erb :'/hikes/new'
     else 
-      erb :'hikes/new'
+      erb :'/users/login'
     end
   end 
 

@@ -7,8 +7,27 @@ class HikesController < ApplicationController
   end
 
   get '/hikes/:id' do 
-    @hike = Hike.find_by(params[:id])
-    erb :'hikes/show_hike'
+    if logged_in?
+      @hike = Hike.find_by(params[:id])
+      erb :'hikes/show_hike'
+    else 
+      erb :'/users/login'
+    end
   end 
+
+
+  helpers do
+
+    def logged_in?
+      !!session[:user_id]
+    end
+
+    def current_user
+      User.find(session[:user_id])
+    end
+
+  end
+
+  
 
 end

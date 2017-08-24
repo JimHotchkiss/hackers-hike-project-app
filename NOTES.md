@@ -63,4 +63,10 @@
 
 ~ Now I want to create a hike page, where when a user clicks on a 'hike' it takes them to a page that gives all the details of that hike.  
   * On this 'show' page I want to change the navbar to show 'logout' option
-~ Okay, so I credated a show_hike page, linked to by through get'/hikes/:id' action
+~ Okay, so I created a show_hike page, linked to by through get'/hikes/:id' action
+~ I added to the show_hike page data about each hike created, I also added a logout link,  and gave it functionality in the users_controller
+
+~ Now I should work on create and edit hikes.  
+!! Okay, little problem: My controllers aren't linked.  So after the user logs in, on the users controller, they are taken to a hikes page.
+~ Might be fun to add a link, in the navbar, to info on hiking.  
+~ I added some helpful and fun links in the drop down menu on the hikes pages and the show_hike page 

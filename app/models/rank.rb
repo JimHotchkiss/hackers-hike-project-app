@@ -1,3 +1,3 @@
-class Rank < ActiveRecord::Base
+class Difficulty < ActiveRecord::Base
   has_many :hikes
-end 
+end

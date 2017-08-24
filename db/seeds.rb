@@ -8,9 +8,11 @@
 #  User.create(username: username, email: email, password: password)
 #end
 
-Difficulty.create(name: "Thick Woods")
-Category.create(name: "Coastal Trail")
-Category.create(name: "Cityscape")
+Difficulty.create(rank: "Easy")
+Difficulty.create(rank: "Mildly Challenging")
+Difficulty.create(rank: "Challenging")
+Difficulty.create(rank: "Hard")
+Difficulty.create(rank: "Experts Only!")
 
 
 #hike_info = [ #name, locaiton, descitpion, user_id, category_id

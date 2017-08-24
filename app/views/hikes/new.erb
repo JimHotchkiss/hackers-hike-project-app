@@ -52,8 +52,8 @@
         <label>Description:</label>
         <input type="text" name="hike[description]"></br>
 
-        <%Category.all.each do |category|%>
-        <input type="checkbox" name="hike[category_id]" value="<%=category.id%>"><%=category.name%>
+        <%Difficulty.all.each do |difficulty_ranking|%>
+        <input type="checkbox" name="hike[difficulty_id]" value="<%=difficulty_ranking.id%>"><%=difficulty_ranking.rank%>
         <%end%>
 
         <input type="submit">

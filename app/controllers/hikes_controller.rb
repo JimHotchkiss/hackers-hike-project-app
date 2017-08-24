@@ -17,13 +17,13 @@ class HikesController < ApplicationController
   post '/hikes/new' do
     if params[:name] == "" || params[:location] == "" || params[:description] == ""
       redirect '/hikes/new'
-    end 
+    end
 
       @hike = Hike.create(params[:hike])
       @hike.user_id = session[:user_id]
       @hike.save
-      @hikes = Hike.all
       binding.pry
+      @hikes = Hike.all
       erb :'hikes/show_hike'
   end
 

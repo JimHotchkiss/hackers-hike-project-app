@@ -6,14 +6,14 @@ class HikesController < ApplicationController
     erb :hikes
   end
 
-  get '/hikes/:id' do 
+  get '/hikes/:id' do
     if logged_in?
       @hike = Hike.find_by(params[:id])
       erb :'hikes/show_hike'
-    else 
+    else
       erb :'/users/login'
     end
-  end 
+  end
 
 
   helpers do
@@ -28,6 +28,6 @@ class HikesController < ApplicationController
 
   end
 
-  
+
 
 end

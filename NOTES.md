@@ -69,4 +69,6 @@
 ~ Now I should work on create and edit hikes.  
 !! Okay, little problem: My controllers aren't linked.  So after the user logs in, on the users controller, they are taken to a hikes page.
 ~ Might be fun to add a link, in the navbar, to info on hiking.  
-~ I added some helpful and fun links in the drop down menu on the hikes pages and the show_hike page 
+~ I added some helpful and fun links in the drop down menu on the hikes pages and the show_hike page
+~ I've run into a problem: my params[:id] = nil throughout the entire app.  PISS ME OFF!
+ 

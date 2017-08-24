@@ -15,7 +15,8 @@ class HikesController < ApplicationController
   end
 
   post '/hikes/new' do
-    if params[:name] == "" || params[:location] == "" || params[:description] == ""
+    if params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
+      binding.pry
       redirect '/hikes/new'
     end
 

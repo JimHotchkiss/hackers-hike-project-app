@@ -76,4 +76,4 @@
 ~ Now, there are a couple directions I could go
   * I still need to build create/edit/delete actions in my hikes_controller
   * I'd also like to read about layout and yields, and maybe implement that on my app
-~ 
+~ Made change to the migration tables to reflect a more realistic description

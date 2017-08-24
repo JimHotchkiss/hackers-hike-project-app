@@ -56,4 +56,6 @@
 ~ I want to add a logout button on the hikes.erb
 ~ Added get '/logout' action.  
 
-!! Had trouble with Atom this morning, and so I cloned a copy of the repo.  Testing it now 
+!! Had trouble with Atom this morning, and so I cloned a copy of the repo.  Testing it now
+
+~ Okay, so I added some simple bootstrap to the index page, to include links (dead at this point) to the hikes

@@ -59,3 +59,8 @@
 !! Had trouble with Atom this morning, and so I cloned a copy of the repo.  Testing it now
 
 ~ Okay, so I added some simple bootstrap to the index page, to include links (dead at this point) to the hikes
+~ Added a navbar with bootstrap, tested the functionality of the singup and login links
+
+~ Now I want to create a hike page, where when a user clicks on a 'hike' it takes them to a page that gives all the details of that hike.  
+  * On this 'show' page I want to change the navbar to show 'logout' option
+~ Okay, so I credated a show_hike page, linked to by through get'/hikes/:id' action

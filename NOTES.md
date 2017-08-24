@@ -55,3 +55,5 @@
 ~ I also built a get '/hikes' action that lead to hikes.erb
 ~ I want to add a logout button on the hikes.erb
 ~ Added get '/logout' action.  
+
+!! Had trouble with Atom this morning, and so I cloned a copy of the repo.  Testing it now 

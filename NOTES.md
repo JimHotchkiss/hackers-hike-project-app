@@ -71,4 +71,9 @@
 ~ Might be fun to add a link, in the navbar, to info on hiking.  
 ~ I added some helpful and fun links in the drop down menu on the hikes pages and the show_hike page
 ~ I've run into a problem: my params[:id] = nil throughout the entire app.  PISS ME OFF!
- 
+~ Okay, reached out on Slack, and found that I was making a simple mistake:
+  * I was using params[:id] instead of @user.id
+~ Now, there are a couple directions I could go
+  * I still need to build create/edit/delete actions in my hikes_controller
+  * I'd also like to read about layout and yields, and maybe implement that on my app
+~ 

@@ -50,7 +50,16 @@ class HikesController < ApplicationController
   end
 
   patch '/hikes/:slug/edit' do
-    #binding.pry
+    @hike = Hike.find_by_slug(params[:slug])
+    if !@hike.user_id == session[:user_id] || params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
+      redirect '/hikes'
+    else
+      @hike = Hike.create(params[:hike])
+      @hike.user_id = session[:user_id]
+      @hike.save
+      @hikes = Hike.all
+      erb :'hikes/hikes'
+    end
   end
 
   get '/hikes/:slug/delete' do

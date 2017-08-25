@@ -80,4 +80,8 @@
 ~ This morning I'm building out the U and the D of the CRUD functionality.
 ~ However, I need to stop and define and emplement a :slug method, so people can search by the name of the hike and not it's unique :id number
 ~ Okay, just spent most of the morning getting the 'checked' funcionality to work
-~ Added the delete controller action to the hikes_controller 
+~ Added the delete controller action to the hikes_controller
+~ Now, I'm building the edit controller, and I need to test that
+  * The person trying to edit is the author
+  * The content is not blank
+  

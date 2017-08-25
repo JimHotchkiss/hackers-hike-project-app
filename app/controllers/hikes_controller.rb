@@ -51,7 +51,7 @@ class HikesController < ApplicationController
 
   patch '/hikes/:slug/edit' do
     @hike = Hike.find_by_slug(params[:slug])
-    if !@hike.user_id == session[:user_id] || params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
+    if !@hike.user_id == session[:user_id] || params[:hike][:name] != "" || params[:hike][:location] != "" || params[:hike][:description] != ""
       redirect '/hikes'
     else
       @hike = Hike.create(params[:hike])

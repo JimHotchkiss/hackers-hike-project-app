@@ -31,9 +31,10 @@ class HikesController < ApplicationController
       redirect :"/hikes/#{@hike.id}"
   end
 
-  get '/hikes/:id' do
+  get '/hikes/:slug' do
     if logged_in?
-      @hike = Hike.find(params[:id])
+      @hike = Hike.find_by_slug(params[:slug])
+      binding.pry
       erb :'hikes/show_hike'
     else
       erb :'/users/login'

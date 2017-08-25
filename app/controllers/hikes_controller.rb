@@ -28,7 +28,7 @@ class HikesController < ApplicationController
       @hike.user_id = session[:user_id]
       @hike.save
       @hikes = Hike.all
-      redirect :"/hikes/#{@hike.id}"
+      redirect :"/hikes/#{@hike.slug}"
   end
 
   get '/hikes/:slug' do

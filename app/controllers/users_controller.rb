@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       erb :'/hikes/hikes'
     else
       redirect '/login'
-    end 
+    end
   end
 
   get '/signup' do

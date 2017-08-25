@@ -44,27 +44,31 @@
     </nav>
 
     <div class="container">
-      <h1>Edit You HackersHike:</h1>
-      <form action="/hikes/<%=@hike.slug%/edit>" method="POST">
+      <form action="/hikes/<%=@hike.slug%>/edit" method="POST">
         <input type="hidden" name="_method" value="PATCH">
 
-        <label>Name:</label>
-        <input type="text" name="hike[name]" id="name"></br>
+        <label for="name">Edit Name:</label>
+        <input type="text" name="hike[name]" value="<%=@hike.name%>"></br>
 
-        <label>Location:</label>
-        <input type="text" name="hike[location]"></br>
+        <label for="location">Edit Location:</label>
+        <input type="text" name="hike[location]" value="<%=@hike.location%>"></br>
 
-        <label>Description:</label>
-        <input type="text" name="hike[description]"></br>
-
-        <%Difficulty.all.each do |difficulty_ranking|%>
-        <%end%>
-
-        <input type="submit">
+        <label for="description">Edit Description:</label>
+        <input type="text" name="hike[description]" value="<%=@hike.description%>">
         <br></br>
 
+        <label for="difficulty">Edit Difficulty:</label>
+        <%Difficulty.all.each do |how_difficult|%>
+        <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>"><%=how_difficult.rank%>
+        <%end%>
+
+
       </form>
+
+
     </div>
+
+
 
   </body>
 </html>

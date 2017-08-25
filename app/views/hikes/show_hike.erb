@@ -35,7 +35,6 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
           </ul>
         </div>
@@ -47,7 +46,9 @@
       Name: <%=@hike.name%></br>
       Location: <%=@hike.location%></br>
       Description: <%=@hike.description%></br>
-    
+      Difficulty: <%=Difficulty.find(@hike.difficulty_id).rank%>
+      <br></br>
+      <a href="/hikes/<%=@hike.user_id%>/edit" class="btn btn-info" role="button">Edit Hike</a>
     </div>
 
   </body>

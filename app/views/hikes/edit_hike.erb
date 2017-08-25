@@ -69,8 +69,8 @@
       </form>
 
       <form action="/hikes/<%=@hike.slug%>/delete" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-          <a href="/hikes/<%=@hike.slug%>/delete" class="btn btn-info" role="button">Delete Hike</a>
+        <input type="hidden" name="_method" value="delete">
+        <input class="btn btn-info" role="button"type="submit" name="<%=@hike.name%>" value="Delete Hike"></br>
 
       </form>
 

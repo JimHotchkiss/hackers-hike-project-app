@@ -34,22 +34,23 @@ class HikesController < ApplicationController
   get '/hikes/:slug' do
     if logged_in?
       @hike = Hike.find_by_slug(params[:slug])
-      binding.pry
       erb :'hikes/show_hike'
     else
       erb :'/users/login'
     end
   end
 
-  get '/hikes/:id/edit' do
-    if params[:id].to_i == session[:user_id]
+  get '/hikes/:slug/edit' do
+    @hike = Hike.find_by_slug(params[:slug])
+    if @hike.user_id == session[:user_id]
       erb :'hikes/edit_hike'
     else
       redirect '/hikes'
     end
   end
 
-  get '/hikes/:id/delete' do
+  get '/hikes/:slug/delete' do
+    @hike = Hike.find_by_slug(params[:slug])
     if params[:id].to_i == session[:user_id]
       erb :'hikes/edit_hike'
     else

@@ -59,7 +59,7 @@
 
         <label for="difficulty">Edit Difficulty:</label>
         <%Difficulty.all.each do |how_difficult|%>
-        <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>"> <%='checked' if how_difficult.hikes.include?(@hike.difficulty_id)%> <%=how_difficult.rank%>
+        <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>" <%='checked' if how_difficult.hikes.include?(@hike) %>><%=how_difficult.rank%>
         <%end%>
 
 

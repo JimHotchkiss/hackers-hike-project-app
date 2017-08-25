@@ -77,3 +77,5 @@
   * I still need to build create/edit/delete actions in my hikes_controller
   * I'd also like to read about layout and yields, and maybe implement that on my app
 ~ Made change to the migration tables to reflect a more realistic description
+~ This morning I'm building out the U and the D of the CRUD functionality.
+~ However, I need to stop and define and emplement a :slug method, so people can search by the name of the hike and not it's unique :id number 

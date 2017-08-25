@@ -3,7 +3,12 @@ class HikesController < ApplicationController
 
 
   get '/hikes' do
-    erb :hikes
+    if logged_in?
+      @hikes = Hike.all
+      erb :'/hikes/hikes'
+    else
+      redirect '/login'
+    end
   end
 
   get '/hikes/new' do
@@ -16,16 +21,14 @@ class HikesController < ApplicationController
 
   post '/hikes/new' do
     if params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
-      binding.pry
       redirect '/hikes/new'
     end
 
       @hike = Hike.create(params[:hike])
       @hike.user_id = session[:user_id]
       @hike.save
-      binding.pry
       @hikes = Hike.all
-      erb :'hikes/show_hike'
+      redirect :"/hikes/#{@hike.id}"
   end
 
   get '/hikes/:id' do
@@ -36,6 +39,24 @@ class HikesController < ApplicationController
       erb :'/users/login'
     end
   end
+
+  get '/hikes/:id/edit' do
+    if params[:id].to_i == session[:user_id]
+      erb :'hikes/edit_hike'
+    else
+      redirect '/hikes'
+    end
+  end
+
+  get '/hikes/:id/delete' do
+    if params[:id].to_i == session[:user_id]
+      erb :'hikes/edit_hike'
+    else
+      redirect '/hikes'
+    end
+  end
+
+
 
 
   helpers do

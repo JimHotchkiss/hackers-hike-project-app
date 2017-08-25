@@ -49,6 +49,8 @@
       Difficulty: <%=Difficulty.find(@hike.difficulty_id).rank%>
       <br></br>
       <a href="/hikes/<%=@hike.user_id%>/edit" class="btn btn-info" role="button">Edit Hike</a>
+      <a href="/hikes/<%=@hike.user_id%>/delete" class="btn btn-info" role="button">Delete Hike</a>
+<!-- I think at this point, this is sendinginfor to the get '/edit', and get '/delete'-->
     </div>
 
   </body>

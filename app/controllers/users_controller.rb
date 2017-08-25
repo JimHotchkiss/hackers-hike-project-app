@@ -6,8 +6,12 @@ class UsersController < ApplicationController
   end
 
   get '/hikes' do
+    if logged_in?
       @hikes = Hike.all
       erb :'/hikes/hikes'
+    else
+      redirect '/login'
+    end 
   end
 
   get '/signup' do

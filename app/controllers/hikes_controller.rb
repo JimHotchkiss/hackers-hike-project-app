@@ -49,6 +49,10 @@ class HikesController < ApplicationController
     end
   end
 
+  patch '/hikes/:slug/edit' do
+    binding.pry
+  end
+
   get '/hikes/:slug/delete' do
     @hike = Hike.find_by_slug(params[:slug])
     if params[:id].to_i == session[:user_id]

@@ -45,7 +45,9 @@
 
     <div class="container">
       <h1>Edit You HackersHike:</h1>
-      <form action="/hikes/new" method="POST">
+      <form action="/hikes/<%=@hike.slug%/edit>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+
         <label>Name:</label>
         <input type="text" name="hike[name]" id="name"></br>
 
@@ -56,7 +58,6 @@
         <input type="text" name="hike[description]"></br>
 
         <%Difficulty.all.each do |difficulty_ranking|%>
-        <input type="checkbox" name="hike[difficulty_id]" value="<%=difficulty_ranking.id%>"><%=difficulty_ranking.rank%>
         <%end%>
 
         <input type="submit">

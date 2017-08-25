@@ -61,7 +61,16 @@
         <%Difficulty.all.each do |how_difficult|%>
         <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>" <%='checked' if how_difficult.hikes.include?(@hike) %>><%=how_difficult.rank%>
         <%end%>
+        <br>
 
+        <a href="/hikes/<%=@hike.slug%>/edit" class="btn btn-info" role="button">Edit Hike</a>
+        <br></br>
+
+      </form>
+
+      <form action="/hikes/<%=@hike.slug%>/delete" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+          <a href="/hikes/<%=@hike.slug%>/delete" class="btn btn-info" role="button">Delete Hike</a>
 
       </form>
 

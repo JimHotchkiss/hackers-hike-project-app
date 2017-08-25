@@ -50,16 +50,21 @@ class HikesController < ApplicationController
   end
 
   patch '/hikes/:slug/edit' do
-    binding.pry
+    #binding.pry
   end
 
   get '/hikes/:slug/delete' do
+    binding.pry # This is where the delete params is ending up.  
     @hike = Hike.find_by_slug(params[:slug])
     if params[:id].to_i == session[:user_id]
       erb :'hikes/edit_hike'
     else
       redirect '/hikes'
     end
+  end
+
+  delete '/hikes/:slug/delete' do
+    binding.pry
   end
 
 

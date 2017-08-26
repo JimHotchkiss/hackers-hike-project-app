@@ -15,6 +15,7 @@ gem 'sinatra-twitter-bootstrap', :require => 'sinatra/twitter-bootstrap'
 gem 'capybara'
 gem 'require_all'
 gem 'bcrypt'
+gem 'rack-flash3'
 
 group :development do
        gem 'shotgun'

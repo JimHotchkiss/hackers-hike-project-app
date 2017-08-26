@@ -42,7 +42,12 @@
     </nav>
 
     <div class="container">
-      <h1>Your HackekrsHike</h1>
+      <h1>Your HackersHike</h1>
+
+      <% if flash.has?(:message) %>
+      <h3><%= flash[:message] %></h3>
+      <%end%>
+
       Name: <%=@hike.name%></br>
       Location: <%=@hike.location%></br>
       Description: <%=@hike.description%></br>

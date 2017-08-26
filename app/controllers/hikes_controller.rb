@@ -1,6 +1,7 @@
+require 'rack-flash'
 class HikesController < ApplicationController
-
-
+  enable :sessions
+  use Rack::Flash
 
   get '/hikes' do
     if logged_in?
@@ -28,6 +29,9 @@ class HikesController < ApplicationController
       @hike.user_id = session[:user_id]
       @hike.save
       @hikes = Hike.all
+
+      flash[:message] = "You successfully created a hike!"
+
       redirect :"/hikes/#{@hike.slug}"
   end
 
@@ -80,9 +84,6 @@ class HikesController < ApplicationController
       redirect '/hikes'
     end
   end
-
-
-
 
   helpers do
 

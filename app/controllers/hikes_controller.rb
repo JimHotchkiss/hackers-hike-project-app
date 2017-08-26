@@ -30,8 +30,6 @@ class HikesController < ApplicationController
       @hike.save
       @hikes = Hike.all
 
-      flash[:message] = "You successfully created a hike!"
-
       redirect :"/hikes/#{@hike.slug}"
   end
 
@@ -49,7 +47,8 @@ class HikesController < ApplicationController
     if @hike.user_id == session[:user_id]
       erb :'hikes/edit_hike'
     else
-      redirect '/hikes'
+      flash[:message] = "Sorry. You are not authorized to edit this hike."
+      redirect :"/hikes/#{@hike.slug}" #change from redirect '/hikes'
     end
   end
 
@@ -57,6 +56,7 @@ class HikesController < ApplicationController
     @hike = Hike.find_by_slug(params[:slug])
     if !@hike.user_id == session[:user_id] || params[:hike][:name] != "" || params[:hike][:location] != "" || params[:hike][:description] != ""
       redirect '/hikes'
+
     else
       @hike = Hike.create(params[:hike])
       @hike.user_id = session[:user_id]

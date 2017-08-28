@@ -22,6 +22,9 @@ class HikesController < ApplicationController
 
   post '/hikes/new' do
     if params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
+
+      flash[:message] = "Please, do not leave form incomplete."
+
       redirect '/hikes/new'
     end
 
@@ -56,7 +59,7 @@ class HikesController < ApplicationController
     @hike = Hike.find_by_slug(params[:slug])
     if params[:hike][:name] == "" || params[:hike][:location] == "" || params[:hike][:description] == ""
 
-      flash[:message] = "Please, do not leave form incomplete." 
+      flash[:message] = "Please, do not leave form incomplete."
 
       redirect "/hikes/#{@hike.slug}"
     else
@@ -65,9 +68,7 @@ class HikesController < ApplicationController
     @hike.description = params[:hike][:description]
     @hike.difficulty_id = params[:hike][:difficulty_id]
     @hike.save
-
     @hikes = Hike.all
-    binding.pry
       redirect "/hikes/#{@hike.slug}"
     end
   end

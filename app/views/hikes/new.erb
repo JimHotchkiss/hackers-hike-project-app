@@ -42,6 +42,11 @@
     </nav>
 
     <div class="container">
+
+      <% if flash.has?(:message) %>
+      <h3><%= flash[:message] %></h3>
+      <%end%>
+
       <h1>Share a hike:</h1>
       <form action="/hikes/new" method="POST">
         <label>Name:</label>

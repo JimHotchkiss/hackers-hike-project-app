@@ -1,6 +1,6 @@
 class Hike < ActiveRecord::Base
   belongs_to :user
-  belongs_to :rank
+  belongs_to :difficulty
 
   def slug
     name.gsub(" ", "-").downcase

@@ -12,6 +12,11 @@ class HikesController < ApplicationController
     end
   end
 
+  get '/user/hikes' do
+    @hikes = current_user.hikes
+    erb :'/hikes/user_hikes'
+  end
+
   get '/hikes/new' do
     if logged_in?
       erb :'/hikes/new'

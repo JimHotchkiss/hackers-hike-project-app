@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/style.css">
-    <title>Sinatra HackersHikes App</title>
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/hikes">HackersHikes</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hiking Info<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a target="_blank" href="http://www.hiking.info/index.php">General and Regional Hiking</a></li>
-                <li><a target="_blank" href="https://www.nps.gov/glac/planyourvisit/hikingthetrails.htm">Glacier National Park</a></li>
-                <li><a target="_blank" href="http://www.appalachiantrail.org/home/explore-the-trail/hiking-basics">Appalachian Conservancy</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      <h1>HackersHikes Home Page</h1>
-      <%@hikes.each do |hike|%>
-      <ul>
-        <li><a href="/hikes/<%=hike.slug%>"><%=hike.name%></li></a>
-      </ul>
-      <%end%>
+<h1>HackersHikes Home Page</h1>
+  <%@hikes.each do |hike|%>
+    <ul>
+      <li><a href="/hikes/<%=hike.slug%>"><%=hike.name%></li></a>
+    </ul>
+  <%end%>
       <img class="_2aTqT" src="https://images.unsplash.com/photo-1464198016405-33fd4527b89d?dpr=2&amp;auto=format&amp;fit=crop&amp;w=1500&amp;h=1085&amp;q=80&amp;cs=tinysrgb&amp;crop=" style="background-color: rgb(30, 36, 46); height: 50vh;"></br>
       <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@mattisrad?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Matt Heaton"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title></title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Matt Heaton</span></a>
-    </div>
-
-
-  </body>
-</html>

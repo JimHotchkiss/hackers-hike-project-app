@@ -25,6 +25,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
+            <li class="active"><a href="/hikes/new">Create Hike</a></li>
             <li class="active"><a href="/user/hikes">Your Hikes</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hiking Info<span class="caret"></span></a>
@@ -36,8 +37,14 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!-- if statement to show sigup/login or logout-->
+            <% if logged_in?%>
+              <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+              <%else%>
+              <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <%end%>
+
           </ul>
         </div>
       </div>

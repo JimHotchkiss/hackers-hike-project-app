@@ -1,7 +1,7 @@
 Sinatra Hikers Application
 
 # Description:
-This is a simple MVC application built using Sinatra.  In this app a  user can post their favorite hikes, and view a list of other users' hikes.  The user will enter a name, location, description, and degree of difficulty. While the hike will have a location and degree of difficulty.  
+This is a simple MVC application built using Sinatra.  In this app a  user can post their favorite hikes, and view a list of other users' hikes.  The user will enter a name, location and a description. While the hike will have a location and degree of difficulty.  
 
 # Instruction:
 1. Navigate to the link: https://github.com/JimHotchkiss/sinatra-fwitter-group-project-v-000

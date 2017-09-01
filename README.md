@@ -11,5 +11,5 @@ This is a simple MVC application built using Sinatra.  In this app a  user can p
 5. Run 'bundle install', by typing 'bundle install' into the command line
 6. Type 'rake db:migrate'
 7. Launch the application by typing 'shotgun' into the terminal
-8. Open the URL linke (== Shotgun/Thin on http://159.203.84.37:30000/) in the browser to enter the application
+8. Open the URL link (== Shotgun/then on http://159.203.84.37:30000/) in the browser to enter the application
 9. Type 'control + c' to exit application

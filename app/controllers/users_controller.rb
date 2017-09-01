@@ -18,17 +18,18 @@ class UsersController < ApplicationController
     if logged_in?
       redirect '/hikes'
     else
+      @user = User.new
       erb :'/users/signup'
     end
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      redirect '/users/signup'
-    else
-      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-      session[:user_id] = @user[:id]
+    @user = User.new(params)
+    if @user.save
+      session[:user_id] = @user.id
       redirect '/hikes'
+    else
+      erb :'/users/signup'
     end
   end
 

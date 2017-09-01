@@ -1,33 +1,33 @@
 
-      <form action="/hikes/<%=@hike.slug%>/edit" method="POST">
-        <input type="hidden" name="_method" value="PATCH">
+<form action="/hikes/<%=@hike.slug%>/edit" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
 
-        <label for="name">Edit Name:</label>
-        <input type="text" name="hike[name]" value="<%=@hike.name%>"></br>
+  <label for="name">Edit Name:</label>
+  <input type="text" name="hike[name]" value="<%=@hike.name%>"></br>
 
-        <label for="location">Edit Location:</label>
-        <input type="text" name="hike[location]" value="<%=@hike.location%>"></br>
+  <label for="location">Edit Location:</label>
+  <input type="text" name="hike[location]" value="<%=@hike.location%>"></br>
 
-        <label for="description">Edit Description:</label>
-        <input type="text" name="hike[description]" value="<%=@hike.description%>">
-        <br></br>
+  <label for="description">Edit Description:</label>
+  <input type="text" name="hike[description]" value="<%=@hike.description%>">
+  <br></br>
 
-        <label for="difficulty">Edit Difficulty:</label>
-        <%Difficulty.all.each do |how_difficult|%>
-        <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>" <%='checked' if how_difficult.hikes.include?(@hike) %>><%=how_difficult.rank%>
-        <%end%>
-        <br>
+  <label for="difficulty">Edit Difficulty:</label>
+  <%Difficulty.all.each do |how_difficult|%>
+  <input type="checkbox" name="hike[difficulty_id]" value="<%=how_difficult.id%>" id="<%= how_difficult.rank%>" <%='checked' if how_difficult.hikes.include?(@hike) %>><%=how_difficult.rank%>
+  <%end%>
+  <br>
 
-        <input class="btn btn-info" role="button"type="submit" name="<%=@hike.name%>" value="Edit Hike"></br>
-        <br>
+  <input class="btn btn-info" role="button"type="submit" name="<%=@hike.name%>" value="Edit Hike"></br>
+  <br>
 
-      </form>
+</form>
 
-      <form action="/hikes/<%=@hike.slug%>/delete" method="POST">
-        <input type="hidden" name="_method" value="delete">
-        <input class="btn btn-info" role="button"type="submit" name="<%=@hike.name%>" value="Delete Hike"></br>
+<form action="/hikes/<%=@hike.slug%>/delete" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input class="btn btn-info" role="button"type="submit" name="<%=@hike.name%>" value="Delete Hike"></br>
 
-      </form>
+</form>
 
 
-    
+

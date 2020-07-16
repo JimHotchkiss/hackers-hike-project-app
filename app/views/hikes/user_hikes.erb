@@ -1,12 +1,10 @@
 
       <h1>Your HackersHikes</h1>
       <%@hikes.each do |hike|%>
-      <ul>
-        <li><a href="/hikes/<%=hike.slug%>"><%=hike.name%></li></a>
-      </ul>
+      <p><a href="/hikes/<%=hike.slug%>"><%=hike.name%></a></p>
       <%end%>
 
-    <div class="container">
+    <div class="user-hike-img">
       <img src="https://static.pexels.com/photos/80000/panorama-mountain-montagne-pyrenees-80000.jpeg" class="img-responsive" alt="Beautiful Vista">
     </div>
 

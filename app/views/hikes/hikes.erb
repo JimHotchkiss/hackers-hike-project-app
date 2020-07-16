@@ -1,9 +1,8 @@
 
       <h1>HackersHikes</h1>
       <%@hikes.each do |hike|%>
-      <ul>
-        <li><a href="/hikes/<%=hike.slug%>"><%=hike.name%></li></a>
-      </ul>
+        <p><a href="/hikes/<%=hike.slug%>"><%=hike.name%></a></p>
+    
       <%end%>
     </div>
 
